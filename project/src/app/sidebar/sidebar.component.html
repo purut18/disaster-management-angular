@@ -1,0 +1,34 @@
+<div 
+    class="container-fluid sidebar animated" 
+    [class.bigWidth]="isBigWidth" [class.slideInLeft]="isBigWidth">
+    <ul class="sideMenu">
+        <a>
+            <li (click)="toggleBigWidth()" [class.special]="!isBigWidth">
+                <h2 *ngIf="isBigWidth">
+                    <fa-icon [icon]="faArrowLeft" class="move"></fa-icon>
+                    incury
+                </h2>
+                <fa-icon [icon]="faBars" *ngIf="!isBigWidth"></fa-icon>
+            </li>
+        </a>
+        <a routerLink="/dashboard"> 
+            <li>
+                <fa-icon [icon]="faHome"></fa-icon> 
+                {{isBigWidth ? 'Home': null}}
+            </li>
+        </a>
+        <a routerLink="/tasks">
+             <li>
+                <fa-icon [icon]="faThumbtack"></fa-icon> 
+                {{isBigWidth ? 'Tasks' : null}}
+                <span *ngIf="isBigWidth" class="badge badge-danger">10</span>
+            </li>
+        </a>
+        <a routerLink="/organisations">
+            <li>
+                <fa-icon [icon]="faSitemap"></fa-icon> 
+                {{isBigWidth ? 'Organisations': null}}
+            </li>
+        </a>
+    </ul>
+</div>
