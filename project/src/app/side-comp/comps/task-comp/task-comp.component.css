@@ -1,0 +1,81 @@
+.task {
+    box-sizing: border-box;
+    background: white;
+    margin: 0;
+    width: 100%;
+}
+.task h3 {
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px 0 4px 0;
+    display: block;
+}
+
+.task h3 fa-icon {
+    color: #09b13b;
+    font-size: 24px;
+}
+
+.task table tr th {
+    background: #eee;
+}
+.task table tr td {
+    padding: 20px 0;
+}
+
+.progressBar {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 3px;
+    position: relative;
+}
+
+.progressBar .line1, .progressBar .line2 {
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background: #E0F2E9;
+    z-index: 9999;
+}
+
+.progressBar .line2 {
+    left: 50%;
+}
+
+.progressBar .afterPt, .progressBar .beforePt, .progressBar .middlePt {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #E0F2E9;
+    z-index: 10000;
+    border-radius: 50%;
+    top: -6px;
+}
+
+.progressBar .afterPt::after, .progressBar .beforePt::after, .progressBar .middlePt::after {
+    content: 'Done';
+    font-size: 12px;
+    position: absolute;
+    top: 16px;
+    left: -5px;
+}
+
+.progressBar .beforePt::after {
+    content: 'To-Do';
+    left: -8px;
+    width: 35px;
+}
+
+.progressBar .middlePt::after {
+    content: 'In Process';
+    width: 60px;
+    left: -20px;
+}
+
+.progressBar .afterPt {
+    left: calc(100% - 15px);
+}
+
+.progressBar .middlePt {
+    left: calc(50% - 7.5px);
+}

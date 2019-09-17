@@ -1,0 +1,29 @@
+<div class="container-fluid broadcast">
+    <h3><fa-icon [icon]="faBullhorn"></fa-icon> Broadcast Info</h3>
+    <form #infoForm="ngForm" novalidate (ngSubmit)="onSubmit()" *ngIf="!submitted">
+        <div class="form-group">
+            <label>Message</label>
+            <input type="text" [class.is-invalid]="nameInput.invalid && nameInput.touched" #nameInput="ngModel" required [(ngModel)]="messageModel.name" class="form-control" placeholder="Eg. Fire Has Broken Out in JNU" name="name">
+            <small class="text-danger" [class.d-none]="nameInput.valid || nameInput.untouched">Message is required</small>
+        </div>
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" [class.is-invalid]="locInput.invalid && locInput.touched" #locInput="ngModel" required [(ngModel)]="messageModel.location" class="form-control" placeholder="Eg. Jaipur" name="loc">
+            <small class="text-danger" [class.d-none]="locInput.valid || locInput.untouched">Location is required</small>
+        </div>
+        <div class="form-group">
+            <label>Send to</label>
+            <select required class="custom-select" #whoToInput="ngModel" name="whoTo" [(ngModel)]="messageModel.sendTo">
+                <option value="" selected="selected">Select One</option>
+                <option *ngFor="let person of sendTo">
+                    {{person}}
+                </option>
+            </select>
+            <small class="text-danger" [class.d-none]="whoToInput.valid || whoToInput.untouched">User to send the message to is required</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="submitted || infoForm.form.invalid">Broadcast</button>
+        <br><br>
+
+    </form>
+</div>

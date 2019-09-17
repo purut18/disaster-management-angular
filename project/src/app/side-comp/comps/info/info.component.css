@@ -1,0 +1,19 @@
+.info {
+    box-sizing: border-box;
+    background: white;
+    margin: 0;
+    width: 100%;
+}
+.info h3 {
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px 0 4px 0;
+    display: block;
+}
+
+.info h3 fa-icon {
+    color: #09b13b;
+    font-size: 24px;
+}
+.info table tr th {
+    background: #eee;
+}

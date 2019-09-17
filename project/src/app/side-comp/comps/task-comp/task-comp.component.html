@@ -1,1 +1,74 @@
-<p>task-comp works!</p>
+<div class="table-responsive mb-4 container-fluid task">
+    <h3><fa-icon [icon]="faThumbtack"></fa-icon> Tasks</h3>
+    <table class="table table-hover text-center">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Task Given By</th>
+                <th>Task For</th>
+                <th>Progress</th>
+                <th>Priority</th>
+                <th>Task Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+                <td>
+                    <div class="progressBar">
+                        <div class="beforePt bg-success"></div>
+                        <div class="middlePt bg-success"></div>
+                        <div class="afterPt"></div>
+                        
+                        <div class="line1 bg-success"></div>
+                        <div class="line2"></div>
+            
+                    </div>
+                </td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+                <td> <div class="progressBar">
+                    <div class="beforePt bg-success"></div>
+                    <div class="middlePt bg-success"></div>
+                    <div class="afterPt bg-success"></div>
+                    
+                    <div class="line1 bg-success"></div>
+                    <div class="line2 bg-success"></div>
+        
+                </div></td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+                <td> <div class="progressBar">
+                    <div class="beforePt bg-success"></div>
+                    <div class="middlePt"></div>
+                    <div class="afterPt"></div>
+                    
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+        
+                </div></td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+  <div class="container-fluid mb-3" *ngIf="ifBtn">
+    <div class="row justify-content-between pt-2">
+      <button class="btn btn-primary">Previous</button>
+      <p>Page 1</p>
+      <button class="btn btn-primary">Next</button>
+    </div>
+  </div>
+</div>

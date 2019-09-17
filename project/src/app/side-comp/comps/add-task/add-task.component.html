@@ -1,0 +1,40 @@
+<div class="container-fluid add-task pb-1">
+    <h3><fa-icon [icon]="faPlus"></fa-icon> Add Task</h3>
+    <div class="alert alert-success animated fadeInUp" style="animation-duration: 0.3s;" *ngIf="submitted">
+        <strong>Success!</strong> Task has been sent!
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMsg">
+        <strong>Error!</strong>
+    </div>
+    <form #taskForm="ngForm" novalidate (ngSubmit)="onSubmit()" *ngIf="!submitted">
+        <div class="form-group">
+            <label>Task</label>
+            <input type="text" [class.is-invalid]="taskInput.invalid && taskInput.touched" #taskInput="ngModel" [(ngModel)]="taskModel.task" required class="form-control" placeholder="Eg. Deliver Food Packets to Jaipur" name="task">
+            <small class="text-danger" [class.d-none]="taskInput.valid || taskInput.untouched">Task is required</small>
+        </div>
+        <div class="form-group">
+            <label>Task For</label>
+            <select required class="custom-select" [(ngModel)]="taskModel.taskFor" #taskForInput="ngModel" [class.is-invalid]="taskForInput.invalid && taskForInput.touched" name="taskFor">
+                <option value="" selected="selected">Select One</option>
+                <option *ngFor="let org of orgs">
+                    {{org}}
+                </option>
+            </select>
+            <small class="text-danger" [class.d-none]="taskForInput.valid || taskForInput.untouched">Organisation to send the task to is required</small>
+        </div>
+        <div class="form-group">
+            <label>Priority</label>
+            <select required class="custom-select" [(ngModel)]="taskModel.priority" #priorityInput="ngModel" [class.is-invalid]="priorityInput.invalid && priorityInput.touched" name="priority">
+                <option value="" selected="selected">Select One</option>
+                <option value="high" selected="selected">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <small class="text-danger" [class.d-none]="priorityInput.valid || priorityInput.untouched">Priority is required</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="submitted || taskForm.form.invalid">Add Task</button>
+        <br><br>
+
+    </form>
+</div>

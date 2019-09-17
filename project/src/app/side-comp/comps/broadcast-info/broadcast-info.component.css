@@ -1,0 +1,16 @@
+.broadcast {
+    box-sizing: border-box;
+    background: white;
+    margin: 0;
+    width: 100%;
+}
+.broadcast h3 {
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px 0 4px 0;
+    display: block;
+}
+
+.broadcast h3 fa-icon {
+    color: #09b13b;
+    font-size: 24px;
+}

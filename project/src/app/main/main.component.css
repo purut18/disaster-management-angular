@@ -1,24 +1,8 @@
 .main {
     padding: 0;
-    height: 100vh;
-    background: #fff8f0;
+    height: 100%;
+    min-height: 100vh;
     box-sizing: border-box;
     padding-left: 50px;
     background: #fde5e2;
-}
-
-.main header {
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    height: 80px;
-    padding: 10px;
-    padding-left: 20px;
-    background: #f87060;
-}
-
-.main header h1 {
-    color: white;
-    margin-top: 5px;
-    font-family: 'Quicksand', sans-serif;
 }

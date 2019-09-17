@@ -12,13 +12,13 @@
             </li>
         </a>
         <a routerLink="/dashboard"> 
-            <li>
+            <li [class.active]="currentUrl=='dashboard'">
                 <fa-icon [icon]="faHome"></fa-icon> 
                 {{isBigWidth ? 'Home': null}}
             </li>
         </a>
         <a routerLink="/tasks">
-             <li>
+             <li [class.active]="currentUrl=='tasks'">
                 <fa-icon [icon]="faThumbtack"></fa-icon> 
                 {{isBigWidth ? 'Tasks' : null}}
                 <span *ngIf="isBigWidth" class="badge badge-danger">10</span>
